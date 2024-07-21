@@ -1,0 +1,199 @@
+{
+    "game": {
+        "id": "1",
+        "name": "Red Blue",
+        "genre": "party",
+        "MaxPlayers": 2,
+        "Resources": [],
+        "Rules": {
+            "Id": 8,
+            "Constraints": [
+                {
+                    "id": "",
+                    "Allowed Actions": "Update Card Place Action",
+                    "FlipActionsArray": false,
+                    "ActivePhases": "Waiting on player input",
+                    "FlipActivePhases": false
+                },
+                {
+                    "id": "",
+                    "Allowed Actions": "Draw",
+                    "FlipActionsArray": false,
+                    "ActivePhases": "Must draw",
+                    "FlipActivePhases": false
+                }
+            ],
+            "EventActionPairs": [
+                {
+                    "Id": 12,
+                    "Trigger": "Play Card",
+                    "Actions": "Transition to Waiting"
+                }
+            ],
+            "ActionModifiers": [
+                {
+                    "Id": 8,
+                    "AffectedActions": {
+                        "Placements": [
+                            {
+                                "Id": 6
+                            }
+                        ]
+                    },
+                    "FlipAffectedActions": false,
+                    "ConstraintFunction": "(game.pieces.cardPlaces[0].placesCards[0].tags['color'] == pieces.decks[0].cards[0].tags['color']) || (pieces.decks[0].cards[0].tags['color'] == 'wild') || # is same"
+                },
+                {
+                    "Id": 8,
+                    "AffectedActions": {
+                        "PieceUpdates": [
+                            {"Id": 11}
+                        ]
+                    },
+                    "FlipAffectedActions": false,
+                    "ConstraintFunction": "top card is wild function"
+                }
+            ]
+        },
+        "Pieces": {
+            "Decks": [
+                {
+                    "Id": 0,
+                    "Name": "Main Deck",
+                    "Cards": [
+                        {
+                            "Id": 0,
+                            "Name": "Blue",
+                            "Description": "Blue",
+                            "Tags": {"color": "#0066FF"}
+                        },
+                        {
+                            "Id": 1,
+                            "Name": "Red",
+                            "Description": "Red",
+                            "Tags": {"color": "#0066FF"}
+                        },
+                        {
+                            "Id": 2,
+                            "Name": "Red",
+                            "Tags": {"color": "#FF2929"}
+                        },
+                        {
+                            "Id": 3,
+                            "Name": "Red",
+                            "Tags": {"color": "#FF2929"}
+                        },
+                        {
+                            "Id": 4,
+                            "Name": "Green",
+                            "Tags": {"color": "#20f523"}
+                        },
+                        {
+                            "Id": 5,
+                            "Name": "Green",
+                            "Tags": {"color": "#20f523"}
+                        },
+                        {
+                            "Id": 6,
+                            "Name": "Yellow",
+                            "Tags": {"color": "#f5ea20"}
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Yellow",
+                            "Tags": {"color": "#f5ea20"}
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Wild",
+                            "Tags": {"color": "wild"}
+                        },
+                        {
+                            "Id": 9,
+                            "Name": "Wild",
+                            "Tags": {"color": "wild"}
+                        }
+                    ]
+                }
+            ],
+            "CardPlaces": [
+                {
+                    "Id": 0,
+                    "Name": "Draw Pile",
+                    "PlacedCards": [],
+                    "Owner": "Game",
+                    "Tags": {"suit": "some color"}
+                },
+                {
+                    "Id": 1,
+                    "Name": "Play Area",
+                    "PlacedCards": [],
+                    "Owner": "Game",
+                    "Tags": {"suit": "some color"}
+                },
+                {
+                    "Id": 2,
+                    "Name": "Player 1 Hand"
+                }
+            ]
+        },
+        "Actions": {
+            "Moves": [],
+            "Trades": [],
+            "Transitions": [
+                {
+                    "Id": 13,
+                    "NewPhase": "Waiting on player phase"
+                }
+            ],
+            "Takes": [],
+            "Placements": [
+                {
+                    "Id": 0,
+                    "Name": "Play a Card",
+                    "Num": 1,
+                    "Targets": {
+                        "Decks": [],
+                        "CardPlaces": [
+                            {
+                                "Id": 1
+                            }
+                        ]
+                    },
+                    "Pieces": {
+                        "Decks": [
+                            {
+                                "Id": 2                            
+                            }
+                        ],
+                        "CardPlaces": []
+                    },
+                    "PlaceRandomly": false
+                }, 
+                {"One for each type of card":""}
+            ],
+            "PieceUpdates": [
+                {
+                    "Id": 11,
+                    "TargetPieces": {
+                        "Decks": [],
+                        "CardPlaces": [
+                            {"Id": 4}
+                        ]
+                    },
+                    "TagUpdates": {"suit": ""}
+                }
+            ]
+        },
+        "Phases": [
+            {
+                "Id": 1,
+                "Name": "Play"
+            }
+        ],
+        "BeginningPhase": {
+            "Id": 0,
+            "Name": "Deal"
+        }
+    }
+}

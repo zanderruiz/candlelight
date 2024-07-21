@@ -1,0 +1,42 @@
+.game-info {
+    z-index: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 50px;
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 10px; /* Curved bottom-left corner */
+    border-bottom-right-radius: 10px; /* Curved bottom-right corner */
+    border-bottom: 2px solid #ccc; /* Border at the bottom */
+    border-left: 2px solid #ccc; /* Border at the left */
+    border-right: 2px solid #ccc; /* Border at the right */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}
+
+.game-info {
+    padding-right: 10px;
+}
+
+.game-info:last-child {
+    padding-right: 0px;
+}
+
+p {
+    margin: 20px;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 600px) {
+    p {
+        width: 10px;
+        font-size: x-small;
+    }
+    .game-info {
+        padding: 0px;
+        max-height: 40px;
+    }
+}

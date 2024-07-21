@@ -1,0 +1,10 @@
+<div 
+class="navigation"
+(click)="navigate()"
+class="navigation"
+[class]="classes"
+cdkDropList
+(cdkDropListEntered)="onDragEnter()"
+(cdkDropListExited)="onDragExit()">
+    <h1>{{ text }}</h1>
+</div>

@@ -1,0 +1,23 @@
+<form [formGroup]="cardPlaceForm">
+    <div class="mb-3">
+      <label for="name{{key}}" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name{{key}}" formControlName="name" autocomplete="off">
+    </div>
+  
+    <div class="mb-3">
+      <app-tags [tags]="cardPlace.tags"></app-tags>
+    </div>
+  
+    <div class="mb-3">
+      <label for="cards{{key}}" class="form-label">Cards</label>
+      <select class="form-select" id="cards{{key}}" formControlName="cards" multiple>
+        <option *ngFor="let card of availableCards" [value]="card.id">{{card.name}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="owner{{key}}" class="form-label">Owner</label>
+      <input type="text" class="form-control" id="owner{{key}}" formControlName="owner" autocomplete="off">
+    </div>
+  </form>
+  

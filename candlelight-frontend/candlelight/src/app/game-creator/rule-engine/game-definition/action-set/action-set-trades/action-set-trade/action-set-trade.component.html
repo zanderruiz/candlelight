@@ -1,0 +1,39 @@
+<form [formGroup]="tradeForm">
+    <div class="mb-3">
+        <label for="name{{key}}" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name{{key}}" formControlName="name" autocomplete="off">
+    </div>
+
+    <div class="mb-3">
+        <label for="maximumAllowedChange{{key}}" class="form-label">Maximum Allowed Change</label>
+        <input type="number" class="form-control" id="maximumAllowedChange{{key}}" min="0"
+            formControlName="maximumAllowedChange">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="enforceMaximumAllowedChange{{key}}"
+                formControlName="enforceMaximumAllowedChange">
+            <label class="form-check-label" for="enforceMaximumAllowedChange{{key}}">
+                Enforce Maximum Allowed Change
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="minimumAllowedChange{{key}}" class="form-label">Minimum Allowed Change</label>
+        <input type="number" class="form-control" id="minimumAllowedChange{{key}}" min="0"
+            formControlName="minimumAllowedChange">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="enforceMinimumAllowedChange{{key}}"
+                formControlName="enforceMinimumAllowedChange">
+            <label class="form-check-label" for="enforceMinimumAllowedChange{{key}}">
+                Enforce Minimum Allowed Change
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="allowedResources{{key}}" class="form-label">Allowed Resources</label>
+        <select class="form-select" id="allowedResources{{key}}" formControlName="allowedResources" multiple>
+            <option *ngFor="let resource of availableResources" [value]="resource.id">{{resource.name}}</option>
+        </select>
+    </div>
+</form>

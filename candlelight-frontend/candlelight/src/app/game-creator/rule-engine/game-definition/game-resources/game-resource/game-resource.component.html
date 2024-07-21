@@ -1,0 +1,27 @@
+<form [formGroup]="resourceForm">
+    <div class="mb-3">
+        <label for="name{{key}}" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name{{key}}" formControlName="name" autocomplete="off">
+    </div>
+
+    <div class="mb-3">
+        <label for="description{{key}}" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description{{key}}" formControlName="description"
+            autocomplete="off">
+    </div>
+
+    <div class="mb-3">
+        <label for="initialValue{{key}}" class="form-label">Initial Value</label>
+        <input type="number" class="form-control" id="initialValue{{key}}" formControlName="initialValue">
+    </div>
+
+    <div class="mb-3">
+        <label for="minValue{{key}}" class="form-label">Minumum Value</label>
+        <input type="number" class="form-control" id="minValue{{key}}" formControlName="minValue">
+    </div>
+
+    <div class="mb-3">
+        <label for="maxValue{{key}}" class="form-label">Maximum Value</label>
+        <input type="number" class="form-control" id="maxValue{{key}}" formControlName="maxValue">
+    </div>
+</form>

@@ -1,0 +1,8 @@
+<div>Tags</div>
+<div class="border p-1" *ngFor="let key of componentKeys; index as i">
+    <div class="d-flex">
+        <app-tag [key]="key" [tag]="findMatchingTag(i)"></app-tag>
+        <button class="btn btn-secondary" (click)="removeComponent(key)">X</button>
+    </div>
+</div>
+<button class="my-2 btn btn-primary" (click)="addComponent()">Add Tag</button>

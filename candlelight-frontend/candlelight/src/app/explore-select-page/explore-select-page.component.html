@@ -1,0 +1,32 @@
+<div class="explore-select-page">
+    <h1>{{ pageTitle }}</h1>
+    <h3>{{ pageSubtitle }}</h3>
+    <div *ngFor="let game of mockGames" class="game-items-container">
+        <app-explore-select-game-item
+        [imageUrl]="game.imageUrl"
+        [gameTitle]="game.title"
+        [gameId]="game.id"
+        [userName]="game.createdBy"
+        (playGameClicked)="showHostGameDialogue($event)"
+        ></app-explore-select-game-item>
+    </div>
+
+    <ng-container *ngIf="(games$ | async) as games">
+        <div *ngFor="let game of games" class="game-items-container">
+            <app-explore-select-game-item
+            [imageUrl]="mockGames[2].imageUrl"
+            [gameTitle]="game.name"
+            [gameId]="game.id"
+            [userName]="'change-me-saved-username'"
+            (playGameClicked)="showHostGameDialogue($event)"
+            ></app-explore-select-game-item>
+        </div>
+    </ng-container>
+
+    <app-host-game-dialogue
+    *ngIf="showHostGameDialogueFlag"
+    [gameName]="selectedGameTitle"
+    [gameId]="selectedGameId"
+    (closed)="closeHostGameDialogue()"
+    ></app-host-game-dialogue>
+</div>

@@ -1,0 +1,45 @@
+.game-item {
+    position: relative;
+    display: flex;
+    align-items: start;
+}
+
+img {
+    width: 20%;
+    min-width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 15px;
+}
+
+.game-item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+h2, p {
+    margin: 0;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-play {
+  border: 2px solid #888;
+  background-color: #f0f0f0;
+}
+
+.button-edit {
+  border: 2px solid #a07840;
+  background-color: #f0a040;
+}

@@ -1,0 +1,9 @@
+<h2>Cards</h2>
+<div class="border p-1" *ngFor="let card of cards; index as i">
+        <div class="mb-5">
+            <span class="fw-bold">Card {{i + 1}}</span>
+            <button class="btn btn-secondary float-end" (click)="removeComponent(card.id)">X</button>
+        </div>
+        <app-piece-set-card [card]="card"></app-piece-set-card>
+</div>
+<button class="my-2 w-100 btn btn-primary" (click)="addComponent()">Add Card</button>

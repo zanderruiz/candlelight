@@ -1,0 +1,33 @@
+<div class="mb-5">
+    <a class="link" (click)="goToGameDefinition()">Back to main definition</a>
+    <h1>Action Set</h1>
+    <div class="row mx-0">
+        <div *ngFor="let type of actionSetTypes" class="col-4 px-1 pb-1">
+            <button class="w-100 btn btn-secondary" (click)="selectView(type)"
+                [ngClass]="{'active': actionSetTypeView === type}">
+                {{type}}
+            </button>
+        </div>
+    </div>
+    <div [ngSwitch]="actionSetTypeView">
+        <div *ngSwitchCase="actionSetType.MoveAction">
+            <app-action-set-moves></app-action-set-moves>
+        </div>
+        <div *ngSwitchCase="actionSetType.TradeAction">
+            <app-action-set-trades></app-action-set-trades>
+        </div>
+        <div *ngSwitchCase="actionSetType.TransitionAction">
+            <app-action-set-transitions></app-action-set-transitions>
+        </div>
+        <div *ngSwitchCase="actionSetType.TakeAction">
+            <app-action-set-takes></app-action-set-takes>
+        </div>
+        <div *ngSwitchCase="actionSetType.PlacementAction">
+            <app-action-set-placements></app-action-set-placements>
+        </div>
+        <div *ngSwitchCase="actionSetType.PieceUpdateAction">
+            <app-action-set-piece-updates></app-action-set-piece-updates>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="confirm()">Confirm</button>
+</div>

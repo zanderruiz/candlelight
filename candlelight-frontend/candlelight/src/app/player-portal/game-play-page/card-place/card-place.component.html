@@ -1,0 +1,19 @@
+<div 
+class="card-place" 
+[id]="id"
+cdkDropList 
+cdkDropListOrientation="horizontal"
+[cdkDropListData]="cards"
+(cdkDropListDropped)="drop($event)">
+@for (card of cards; track card) {
+  <app-card
+  class = "card-container"
+  [name]="card.name"
+  [value]="card.value"
+  [id]="card.id"
+  [tags]="card.tags"
+  cdkDrag 
+  cdkDragBoundary=".game-container"
+  ></app-card>
+}
+</div>

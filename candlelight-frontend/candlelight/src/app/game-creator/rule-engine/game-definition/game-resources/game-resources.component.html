@@ -1,0 +1,11 @@
+<a class="link" (click)="goToGameDefinition()">Back to main definition</a>
+<h1>Game Resources</h1>
+<div class="border p-1" *ngFor="let key of componentKeys">
+        <div class="mb-5">
+            <span class="fw-bold">Resource</span>
+            <button class="btn btn-secondary float-end" (click)="removeComponent(key)">X</button>
+        </div>
+        <app-game-resource [key]="key"></app-game-resource>
+</div>
+<button class="my-2 w-100 btn btn-primary" (click)="addComponent()">Add Game Resource</button>
+<button class="btn btn-primary" (click)="confirm()">Confirm</button>

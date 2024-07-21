@@ -1,0 +1,43 @@
+.deck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 220px;
+    height: 320px;
+    padding: 10px;
+    background-color: #d1d1d1;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+/* cdk Drag Stuff */
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+/* Attempt to make card contents visible while dragging from pile, currently not working */
+.cdk-drag-preview .face-down * {
+    visibility: visible;
+}
+
+.deck.cdk-drop-list-dragging .card-container:not(.cdk-drag-placeholder)
+{
+    opacity: 0;;
+}
+
+.deck .card-container {
+    display: none;
+}
+
+.deck .card-container:last-child {
+    display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-place {
+        width: calc(40vw + 20px);
+        height: calc((40vw / 2) * 3 + 20px);
+        min-width: calc(40vw + 20px);
+        min-height: calc((40vw / 2) * 3 + 20px);
+    }
+}

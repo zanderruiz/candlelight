@@ -1,0 +1,14 @@
+<form [formGroup]="pieceUpdateForm">
+    <div class="mb-3">
+        <label for="name{{key}}" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name{{key}}" formControlName="name" autocomplete="off">
+    </div>
+
+    <div class="mb-3">
+        <app-tags [tags]="pieceUpdate.tagUpdates"></app-tags>
+    </div>
+
+    <div class="mb-3">
+        <app-piece-subset [key]="+key" [label]="'Target Pieces'"></app-piece-subset>
+    </div>
+</form>

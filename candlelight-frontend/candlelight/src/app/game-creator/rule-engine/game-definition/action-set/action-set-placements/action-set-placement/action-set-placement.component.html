@@ -1,0 +1,40 @@
+<form [formGroup]="placementForm">
+    <div class="mb-3">
+        <label for="name{{key}}" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name{{key}}" formControlName="name" autocomplete="off">
+    </div>
+
+    <div class="mb-3">
+        <label for="num{{key}}" class="form-label">Number of Pieces</label>
+        <input type="number" class="form-control" id="num{{key}}" formControlName="num" min="0">
+    </div>
+
+    <div class="mb-3">
+        <app-piece-subset [key]="1" [label]="'Allowed Pieces'"></app-piece-subset>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="flipAllowedPieces{{key}}"
+                formControlName="flipAllowedPieces">
+            <label class="form-check-label" for="flipAllowedPieces{{key}}">
+                Flip Allowed Pieces
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <app-piece-subset [key]="2" [label]="'Allowed Targets'"></app-piece-subset>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="flipAllowedTargets{{key}}"
+                formControlName="flipAllowedTargets">
+            <label class="form-check-label" for="flipAllowedTargets{{key}}">
+                Flip Allowed Targets
+            </label>
+        </div>
+    </div>
+
+    <div class="mb-3 form-check">
+        <input class="form-check-input" type="checkbox" id="placeRandomly{{key}}" formControlName="placeRandomly">
+        <label class="form-check-label" for="placeRandomly{{key}}">
+            Place Randomly
+        </label>
+    </div>
+</form>

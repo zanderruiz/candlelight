@@ -1,0 +1,36 @@
+.lobby {
+    text-align: center;
+}
+
+.player-list {
+    max-width: 400px; /* Set maximum width for the player list */
+    margin: 0 auto; /* Center the player list horizontally */
+}
+
+.player {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: #f0f0f0;
+    width: 100%; /* Make player items fill the width of the player list */
+}
+
+button {
+    border: 0px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #444;
+    color: #fff;
+    outline: none;
+    margin: 20px;
+}
+
+h4 {
+    margin: 20px;
+}
+
+h2 {
+    margin: 20px;
+}

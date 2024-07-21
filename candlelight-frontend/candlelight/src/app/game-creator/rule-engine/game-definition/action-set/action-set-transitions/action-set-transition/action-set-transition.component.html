@@ -1,0 +1,11 @@
+<form [formGroup]="transitionForm">
+    <div class="mb-3">
+        <label for="name{{key}}" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name{{key}}" formControlName="name" autocomplete="off">
+    </div>
+
+    <div class="mb-3">
+        <label for="newPhase{{key}}" class="form-label">New Phase</label>
+        <input type="text" class="form-control" id="newPhase{{key}}" formControlName="newPhase" autocomplete="off">
+    </div>
+</form>

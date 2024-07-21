@@ -1,0 +1,99 @@
+<div class="game-play-page">
+  <app-game-info-bar
+  [gameName]="gameName"
+  [roomCode]="roomCode"
+  [playerName]="(currPlayer$ | async)"
+  ></app-game-info-bar>
+  <div class="game-container" cdkDropListGroup>  
+    <!-- Generate views for decks -->
+    <div *ngFor="let deck of (decks$ | async)" 
+    class="view" 
+    [class]="'deck-view-' + deck.id"
+    style="visibility: hidden;">
+      <div
+      class="navigation-container top-navigation-container">
+      </div>
+      <app-deck
+      [id]="deck.id"
+      [cards]="deckArrays.get(deck.id)!!"></app-deck>
+      <!-- Can navigate back to hand from deck view -->
+      <div
+      class="navigation-container bottom-navigation-container">
+        <ng-container *ngFor="let player of (players$ | async)">
+          <app-navigation
+          *ngIf="playerIsCurrPlayer(player)"
+          [text]="'My Hand'"
+          [classes]="'bottom-navigation'"
+          [hostViewClass]="'deck-view-' + deck.id"
+          [destinationViewClass]="'player-view-' + player.id"
+          ></app-navigation>
+        </ng-container>
+      </div>
+    </div>
+    <!-- Generate views for card places -->
+    <div 
+    *ngFor="let cardPlace of (cardPlaces$ | async)" 
+    class="view" 
+    [class]="'card-place-view-' + cardPlace.id"
+    style="visibility: hidden;">
+      <div
+      class="navigation-container top-navigation-container">
+        <app-navigation
+          *ngFor="let deck of (decks$ | async)"
+          [text]="'Draw from ' + deck.name"
+          [classes]="'top-navigation'"
+          [hostViewClass]="'card-place-view-' + cardPlace.id"
+          [destinationViewClass]="'deck-view-' + deck.id"
+        ></app-navigation>
+      </div>
+      <app-card-place
+      [id]="cardPlace.id"
+      [cards]="cardPlaceArrays.get(cardPlace.id)!!"></app-card-place>
+      <div
+      class="navigation-container bottom-navigation-container">
+        <!-- Card places can navigate back to player hand -->
+        <ng-container *ngFor="let player of (players$ | async)">
+          <app-navigation
+          *ngIf="playerIsCurrPlayer(player)"
+          [text]="'My Hand'"
+          [classes]="'bottom-navigation'"
+          [hostViewClass]="'card-place-view-' + cardPlace.id"
+          [destinationViewClass]="'player-view-' + player.id"
+          ></app-navigation>
+        </ng-container>
+      </div>
+    </div>
+    <!-- Generate views for player hands -->
+    <div 
+    *ngFor="let player of (players$ | async)" 
+    class="view" 
+    [class]="'player-view-' + player.id"
+    [style]="{ 'visibility': playerIsCurrPlayer(player) ? 'visible' : 'hidden' }">
+      <h4 class="view-name">{{ player.name }}'s Hand</h4>
+      <div
+      class="navigation-container top-navigation-container">
+        <app-navigation
+        *ngFor="let deck of (decks$ | async)"
+        [text]="'Draw from ' + deck.name"
+        [classes]="'top-navigation'"
+        [hostViewClass]="'player-view-' + player.id"
+        [destinationViewClass]="'deck-view-' + deck.id"
+        ></app-navigation>
+      </div>
+      <app-card-place
+      [id]="player.hand.decks[0].id"
+      [cards]="playerHandArrays.get(player.id + player.hand.decks[0].id)!!"></app-card-place>
+      <div
+      class="navigation-container bottom-navigation-container">
+        <app-navigation
+        *ngFor="let cardPlace of (cardPlaces$ | async)"
+        [text]="cardPlace.name"
+        [classes]="'bottom-navigation'"
+        [hostViewClass]="'player-view-' + player.id"
+        [destinationViewClass]="'card-place-view-' + cardPlace.id"
+        ></app-navigation>
+      </div>
+    </div>
+  </div>
+</div>
+  

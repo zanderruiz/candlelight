@@ -1,0 +1,35 @@
+<div class="mb-5">
+    <h1>Game Definition</h1>
+
+    <h2>General Information</h2>
+    <form class="mb-3" [formGroup]="gameForm">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" [formControlName]="'name'" autocomplete="off">
+        </div>
+
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            <input type="text" class="form-control" id="genre" [formControlName]="'genre'" autocomplete="off">
+        </div>
+
+        <div class="mb-3">
+            <label for="maxPlayers" class="form-label">Max Players</label>
+            <input type="number" class="form-control" id="maxPlayers" [formControlName]="'maxPlayers'" min="1" max="8">
+        </div>
+
+        <button class="btn btn-primary" (click)="confirm()">Confirm</button>
+    </form>
+    <hr>
+
+    <h2>Additional Information</h2>
+    <button class="my-1 w-100 btn btn-secondary" (click)="goToGameResources()">Game Resources</button>
+    <button class="my-1 w-100 btn btn-secondary" (click)="goToPieceSet()">Piece Set</button>
+    <button class="my-1 w-100 btn btn-secondary" (click)="goToActionSet()">Action Set</button>
+    <button class="my-1 w-100 btn btn-secondary" (click)="goToRuleSet()">Rule Set</button>
+    <button class="my-1 w-100 btn btn-secondary">Game Phases</button>
+
+    <hr>
+
+    <button class="w-100 btn btn-primary" (click)="save()">Save & Publish</button>
+</div>

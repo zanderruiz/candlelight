@@ -1,0 +1,9 @@
+CANDLELIGHT-API: 2024/04/21 15:09:09 Starting HTTP listener...
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/21 15:09:14 
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/21 15:09:14 ==SaveGameDefToDB==: Saving Game with id=={game123}
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/21 15:09:14 ==SaveGameDefToDB==: GameDefinition saved with key == {game:game123}
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/21 15:09:14 
+CANDLELIGHT-API: 2024/04/21 15:17:24 Starting hostLobby
+CANDLELIGHT-API: 2024/04/21 15:17:24 Missing gameId or playerName in request
+CANDLELIGHT-API: 2024/04/21 16:43:18 Starting hostLobby
+CANDLELIGHT-API: 2024/04/21 16:43:18 Missing gameId or playerName in request

@@ -1,0 +1,89 @@
+.host-game-dialogue {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+    max-width: 400px;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    border: 4px solid #ccc;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    cursor: pointer;
+}
+
+.screen-dimmer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 90%;
+    border: 0px;
+    cursor: pointer;
+}
+
+input[type="text"],
+button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #444;
+    color: #fff;
+    outline: none;
+}
+
+.host-game-dialogue label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+:-moz-placeholder {
+    color: #ccc;
+}
+
+::-moz-placeholder {
+    color: #ccc;
+}
+
+:-ms-input-placeholder {
+    color: #ccc;
+}
+
+@media only screen and (max-width: 600px) {
+    .host-game-dialogue {
+        width: 100vw;
+    }
+}

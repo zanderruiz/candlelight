@@ -1,0 +1,21 @@
+<form [formGroup]="cardForm">
+    <div class="mb-3">
+        <label for="name{{key}}" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name{{key}}" formControlName="name" autocomplete="off">
+    </div>
+
+    <div class="mb-3">
+        <app-tags [tags]="card.tags"></app-tags>
+    </div>
+
+    <div class="mb-3">
+        <label for="description{{key}}" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description{{key}}" formControlName="description"
+            autocomplete="off">
+    </div>
+
+    <div class="mb-3">
+        <label for="value{{key}}" class="form-label">Value</label>
+        <input type="number" class="form-control" id="value{{key}}" formControlName="value">
+    </div>
+</form>

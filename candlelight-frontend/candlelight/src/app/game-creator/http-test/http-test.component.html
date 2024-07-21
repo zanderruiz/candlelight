@@ -1,0 +1,19 @@
+<div class="pt-3">
+    <form [formGroup]="form">
+        <div class="mb-3">
+            <h1>POST Request to <span class="fw-bold">localhost:10000/</span></h1>
+            <label for="testInput" class="form-label">
+                Body
+            </label>
+            <input type="text" class="form-control" id="testInput" formControlName="testInput">
+            <button class="btn btn-primary" (click)="send()">Send</button>
+        </div>
+
+        <dl>
+            <dt>Response</dt>
+            <dd [ngClass]="{'text-warning': response.value.error}">
+                {{response.value.value}}
+            </dd>
+        </dl>
+    </form>
+</div>

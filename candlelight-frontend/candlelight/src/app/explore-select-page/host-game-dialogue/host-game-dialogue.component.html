@@ -1,0 +1,14 @@
+<div class="screen-dimmer">
+    <div class="host-game-dialogue">
+        <button class="close-button" (click)="closeDialogue()">X</button> <!-- Close button -->
+        <h1>Play {{ gameName }}</h1>
+        <form (ngSubmit)="submitForm()">
+            <div class="form-group">
+                <label for="playerName">NAME</label>
+                <input type="text" id="playerName" name="playerName" maxlength="12" [(ngModel)]="playerName" required
+                    placeholder="ENTER YOUR NAME">
+            </div>
+            <button type="submit">LAUNCH GAME</button>
+        </form>
+    </div>
+</div>

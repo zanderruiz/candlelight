@@ -1,0 +1,9 @@
+<form [formGroup]="tagForm">
+    <div class="d-flex">
+        <label for="key{{key}}" class="form-label">Key</label>
+        <input type="text" class="form-control" id="key{{key}}" formControlName="key" autocomplete="off">
+
+        <label for="value{{key}}" class="form-label">Value</label>
+        <input type="text" class="form-control" id="value{{key}}" formControlName="value" autocomplete="off">
+    </div>
+</form>

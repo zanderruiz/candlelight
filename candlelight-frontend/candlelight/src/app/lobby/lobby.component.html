@@ -1,0 +1,21 @@
+<div class="lobby">
+    <app-game-info-bar
+    [gameName]="(gameName$ | async)"
+    [roomCode]="(roomCode$ | async)"
+    [playerName]="(currPlayer$ | async)"
+    ></app-game-info-bar>
+    <div class="lobby-wrapper">
+        <div>
+            <h2>Players:</h2>
+            <div class="player-list">
+                <div *ngFor="let player of (players$ | async)" class="player">
+                {{ player }}
+                </div>
+            </div>
+        </div>
+        <button *ngIf="isHost();else waitingMessage" class="start-game-button" (click)="startGame()">Start Game</button>
+        <ng-template #waitingMessage>
+            <h4>Waiting for host to start game...</h4>
+        </ng-template>
+    </div>
+</div>

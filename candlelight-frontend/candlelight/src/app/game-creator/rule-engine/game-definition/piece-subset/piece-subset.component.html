@@ -1,0 +1,16 @@
+<h3>{{label}}</h3>
+<form [formGroup]="pieceSubsetForm">
+    <div>
+        <label for="decks{{key}}" class="form-label">Decks</label>
+        <select class="form-select" id="decks{{key}}" formControlName="decks" multiple>
+            <option *ngFor="let deck of availableDecks" [value]="deck.id">{{deck.name}}</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="cardPlaces{{key}}" class="form-label">Card Places</label>
+        <select class="form-select" id="cardPlaces{{key}}" formControlName="cardPlaces" multiple>
+            <option *ngFor="let cardPlace of availableCardPlaces" [value]="cardPlace.id">{{cardPlace.name}}</option>
+        </select>
+    </div>
+</form>

@@ -1,0 +1,15 @@
+<div class="game-info">
+  <!-- Show labels only on screens wider than 600px -->
+  <p *ngIf="!isPhone()">Game: {{ gameName }}</p>
+  <p *ngIf="!isPhone()">|</p>
+  <p *ngIf="!isPhone()">Code: {{ roomCode }}</p>
+  <p *ngIf="!isPhone()">|</p>
+  <p *ngIf="!isPhone()">Name: {{ playerName }}</p>
+  
+  <!-- Show values without labels on phone screens -->
+  <p *ngIf="isPhone()">{{ gameName }}</p>
+  <p *ngIf="isPhone()">|</p>
+  <p *ngIf="isPhone()">{{ roomCode }}</p>
+  <p *ngIf="isPhone()">|</p>
+  <p *ngIf="isPhone()">{{ playerName }}</p>
+</div>

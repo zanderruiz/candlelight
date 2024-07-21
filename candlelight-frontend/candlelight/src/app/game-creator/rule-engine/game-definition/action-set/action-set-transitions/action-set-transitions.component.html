@@ -1,0 +1,9 @@
+<h2>Transitions</h2>
+<div class="border p-1" *ngFor="let transition of transitions; index as i">
+    <div class="mb-5">
+        <span class="fw-bold">Transition {{i + 1}}</span>
+        <button class="btn btn-secondary float-end" (click)="removeComponent(transition.id)">X</button>
+    </div>
+    <app-action-set-transition [transition]="transition"></app-action-set-transition>
+</div>
+<button class="my-2 w-100 btn btn-primary" (click)="addComponent()">Add Transition Action</button>

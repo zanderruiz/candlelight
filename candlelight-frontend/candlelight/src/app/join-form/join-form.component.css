@@ -1,0 +1,64 @@
+.join-form {
+    /* width: 400px; */
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.join-form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 90%;
+    border: 0px;
+}
+
+input[type="text"],
+button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #444;
+    color: #fff;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+:-moz-placeholder {
+    color: #ccc;
+}
+
+::-moz-placeholder {
+    color: #ccc;
+}
+
+:-ms-input-placeholder {
+    color: #ccc;
+}
+
+@media only screen and (max-width: 600px) {
+    .join-form {
+        padding: 0px;
+    }
+}

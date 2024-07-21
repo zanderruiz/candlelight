@@ -1,0 +1,11 @@
+<div class="game-item">
+  <img [src]="imageUrl" alt="Game Image">
+  <div class="game-item-details">
+    <h2>{{ gameTitle }}</h2>
+    <p>By {{ userName }}</p>
+    <div class="button-container">
+      <button class="button-play me-1" (click)="playGame()">PLAY</button>
+      <button class="button-edit" (click)="editGame()">EDIT</button>
+    </div>
+  </div>
+</div>

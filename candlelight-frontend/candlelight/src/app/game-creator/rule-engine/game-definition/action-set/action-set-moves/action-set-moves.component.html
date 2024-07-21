@@ -1,0 +1,9 @@
+<h2>Moves</h2>
+<div class="border p-1" *ngFor="let move of moves; index as i">
+    <div class="mb-5">
+        <span class="fw-bold">Move {{i + 1}}</span>
+        <button class="btn btn-secondary float-end" (click)="removeComponent(move.id)">X</button>
+    </div>
+    <app-action-set-move [move]="move"></app-action-set-move>
+</div>
+<button class="my-2 w-100 btn btn-primary" (click)="addComponent()">Add Move Action</button>

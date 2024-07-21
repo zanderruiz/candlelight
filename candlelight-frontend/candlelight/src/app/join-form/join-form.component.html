@@ -1,0 +1,16 @@
+<div class="join-form">
+    <h1>JOIN A GAME</h1>
+    <form (ngSubmit)="submitForm()">
+        <div class="form-group">
+            <label for="roomCode">ROOM CODE</label>
+            <input type="text" id="roomCode" name="roomCode" maxlength="4" [(ngModel)]="roomCode" required
+                placeholder="ENTER CODE">
+        </div>
+        <div class="form-group">
+            <label for="playerName">NAME</label>
+            <input type="text" id="playerName" name="playerName" maxlength="12" [(ngModel)]="playerName" required
+                placeholder="ENTER YOUR NAME">
+        </div>
+        <button type="submit">PLAY</button>
+    </form>
+</div>

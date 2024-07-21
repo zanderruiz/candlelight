@@ -1,0 +1,21 @@
+<div
+class="navigation-container top-navigation-container">
+  <app-navigation
+  class = "navigation-shell"
+  [text]="'Draw'"
+  [hostViewClass]="'player-view'"
+  [destinationViewClass]="'play-area-view'"
+  ></app-navigation>
+</div>
+<app-card-place
+[id]="'hand'"
+[cards]="cards"></app-card-place>
+<div
+class="navigation-container bottom-navigation-container">
+  <app-navigation
+  class = "navigation-shell"
+  [text]="'Draw'"
+  [hostViewClass]="'player-view'"
+  [destinationViewClass]="'play-area-view'"
+  ></app-navigation>
+</div>

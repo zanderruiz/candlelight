@@ -1,0 +1,9 @@
+CANDLELIGHT-API: 2024/04/22 11:54:33 Starting HTTP listener...
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/22 12:24:51 
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/22 12:24:51 ==SaveGameDefToDB==: Saving Game with id=={game123}
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/22 12:24:51 ==SaveGameDefToDB==: GameDefinition saved with key == {game:game123}
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/22 12:24:51 
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/22 12:25:15 
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/22 12:25:15 ==SaveGameDefToDB==: Saving Game with id=={game123}
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/22 12:25:15 ==SaveGameDefToDB==: GameDefinition saved with key == {game:game123}
+CANDLELIGHT-RULEENGINE/Engine: 2024/04/22 12:25:15 

@@ -1,0 +1,11 @@
+.explore-select-page {
+    padding: 20px 0 20px 0; /* Add padding to create space around the content */
+  }
+
+  h1, h3 {
+    margin: 10px 0; /* Add margin to create space between the headings */
+  }
+
+  .game-items-container {
+    margin-top: 20px; /* Add margin to create space between game items */
+  }

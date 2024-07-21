@@ -1,0 +1,24 @@
+<div class="mb-5">
+    <a class="link" (click)="goToGameDefinition()">Back to main definition</a>
+    <h1>Piece Set</h1>
+    <div class="row mx-0">
+        <div *ngFor="let type of pieceSetTypes" class="col px-1">
+            <button class="w-100 btn btn-secondary" (click)="selectView(type)"
+                [ngClass]="{'active': pieceSetTypeView === type}">
+                {{type}}
+            </button>
+        </div>
+    </div>
+    <div [ngSwitch]="pieceSetTypeView">
+        <div *ngSwitchCase="pieceSetType.Cards">
+            <app-piece-set-cards></app-piece-set-cards>
+        </div>
+        <div *ngSwitchCase="pieceSetType.Decks">
+            <app-piece-set-decks></app-piece-set-decks>
+        </div>
+        <div *ngSwitchCase="pieceSetType.CardPlaces">
+            <app-piece-set-card-places></app-piece-set-card-places>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="confirm()">Confirm</button>
+</div>
